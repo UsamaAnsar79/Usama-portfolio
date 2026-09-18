@@ -1,85 +1,63 @@
 // index.js
 export const servicesData = [
   {
-    title: "Web Development",
-    description: "Custom websites and web applications",
+    title: "Frontend Development",
+    description: "Responsive, reusable interfaces built with modern React",
     items: [
       {
-        title: "Portfolio sites",
+        title: "React.js & Next.js applications",
         description: "",
       },
       {
-        title: "Business websites",
+        title: "Vue.js interfaces",
         description: "",
       },
       {
-        title: "Web apps with React/TypeScript",
+        title: "Reusable component architecture",
         description: "",
       },
       {
-        title: "Landing pages",
+        title: "Tailwind CSS styling",
         description: "",
       },
     ],
   },
   {
     title: "Backend & APIs",
-    description: "Server-side development and database work",
+    description: "Full-stack development and API integration",
     items: [
       {
-        title: "REST APIs",
+        title: "Node.js & Express.js services",
         description: "",
       },
       {
-        title: "Database design",
+        title: "REST API design & integration",
         description: "",
       },
       {
-        title: "Authentication systems",
+        title: "PostgreSQL database work",
         description: "",
       },
       {
-        title: "Data processing scripts",
+        title: "Frontend-to-backend communication",
         description: "",
       },
     ],
   },
   {
-    title: "Data & Automation",
-    description: "Scripts and tools to make your life easier",
+    title: "Interactive & Animation",
+    description: "Engaging, high-performance web experiences",
     items: [
       {
-        title: "Data analysis scripts",
+        title: "GSAP & ScrollTrigger animations",
         description: "",
       },
       {
-        title: "Automation tools",
+        title: "Smooth scrolling with Lenis",
         description: "",
       },
       {
-        title: "File processing",
-        description: "",
-      },
-      {
-        title: "API integrations",
-        description: "",
-      },
-    ],
-  },
-  {
-    title: "Technical Consulting",
-    description: "Help with your tech decisions and implementation",
-    items: [
-      {
-        title: "Tech stack recommendations",
-        description: "",
-      },
-      {
-        title: "Architecture planning",
-        description: "",
-      },
-      {
-        title: "Code review",
+        title: "Three.js 3D experiences",
         description: "",
       },
       {
@@ -88,103 +66,89 @@ export const servicesData = [
       },
     ],
   },
+  {
+    title: "AI Integration",
+    description: "AI-powered features for real products",
+    items: [
+      {
+        title: "AI API integration",
+        description: "",
+      },
+      {
+        title: "Productivity & automation tooling",
+        description: "",
+      },
+      {
+        title: "Debugging & unit testing",
+        description: "",
+      },
+      {
+        title: "Secure, maintainable code",
+        description: "",
+      },
+    ],
+  },
 ];
 export const projects = [
   {
     id: 1,
-    name: "Mobile Accessories E-commerce",
+    name: "MYAIO — AI-Powered Business Growth Platform",
     description:
-      "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
-    href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
-    bgImage: "/assets/backgrounds/blanket.jpg",
+      "An AI-powered platform focused on productivity, SEO, and business-growth automation, translating complex SEO requirements into user-friendly interfaces.",
+    href: "https://app.myaio.com/",
+    image: "/assets/projects/MyAIO.png",
     frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
+      { id: 1, name: "Laravel" },
+      { id: 2, name: "Vue.js" },
+      { id: 3, name: "Three.js" },
+      { id: 4, name: "Bootstrap" },
+      { id: 5, name: "AI Integration" },
     ],
   },
   {
     id: 2,
-    name: "Plant Shop E-commerce",
+    name: "TradersEdge",
     description:
-      "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
-    href: "",
-    image: "/assets/projects/plant-shop.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
+      "A trading education platform offering expert-led courses, market calculators, and PSX tools to help students master technical analysis and risk management.",
+    href: "https://tradersedge.online/",
+    image: "/assets/projects/TradersEdge.png",
     frameworks: [
       { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Stripe API" },
-      { id: 4, name: "Tailwind CSS" },
+      { id: 2, name: "Vite" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 4, name: "REST APIs" },
     ],
   },
   {
     id: 3,
-    name: "Apple Tech Marketplace",
+    name: "Splicer Pro",
     description:
-      "An e-commerce platform for Apple products and accessories with deals and category filtering.",
-    href: "",
-    image: "/assets/projects/apple-tech-store.jpg",
-    bgImage: "/assets/backgrounds/map.jpg",
+      "A responsive, dynamic website for a fiber-optic and networking equipment business, with a separate dashboard for managing images and content.",
+    href: "https://www.splicerpro.com/",
+    image: "/assets/projects/splicerpro.png",
     frameworks: [
-      { id: 1, name: "Blazor" },
-      { id: 2, name: "ASP.NET Core" },
-      { id: 3, name: "SQL Server" },
-      { id: 4, name: "Bootstrap" },
+      { id: 1, name: "React" },
+      { id: 2, name: "Next.js" },
+      { id: 3, name: "Tailwind CSS" },
+      { id: 4, name: "REST APIs" },
     ],
   },
   {
     id: 4,
-    name: "Electronics & Gadgets Store",
+    name: "Prestige Travel Holidays",
     description:
-      "A multi-category online shop featuring electronics, home appliances, and gaming gear with special offers.",
-    href: "",
-    image: "/assets/projects/electronics-store.jpg",
-    bgImage: "/assets/backgrounds/poster.jpg",
+      "A UK-based travel agency site for booking flights, holiday packages, and Umrah pilgrimages to 30+ destinations, with flexible Book-Now-Pay-Later options.",
+    href: "https://www.prestigetravelholidays.com/",
+    image: "/assets/projects/prestige.png",
     frameworks: [
-      { id: 1, name: "Vue.js" },
-      { id: 2, name: "Laravel" },
-      { id: 3, name: "MySQL" },
-      { id: 4, name: "SCSS" },
-    ],
-  },
-  {
-    id: 5,
-    name: "Home Decor Marketplace",
-    description:
-      "A curated collection of designer home decor items, including furniture and artisan vases.",
-    href: "",
-    image: "/assets/projects/home-decor-store.jpg",
-    bgImage: "/assets/backgrounds/table.jpg",
-    frameworks: [
-      { id: 1, name: "Angular" },
-      { id: 2, name: "Firebase" },
-      { id: 3, name: "GraphQL" },
-      { id: 4, name: "Material UI" },
-    ],
-  },
-  {
-    id: 6,
-    name: "Digital Game Store",
-    description:
-      "A gaming platform featuring discounted titles, top sellers, and genre-based browsing.",
-    href: "",
-    image: "/assets/projects/game-store.jpg",
-    bgImage: "/assets/backgrounds/curtains.jpg",
-    frameworks: [
-      { id: 1, name: "Svelte" },
-      { id: 2, name: "Node.js" },
-      { id: 3, name: "MongoDB" },
-      { id: 4, name: "Chakra UI" },
+      { id: 1, name: "React" },
+      { id: 2, name: "Next.js" },
+      { id: 3, name: "REST APIs" },
+      { id: 4, name: "Tailwind CSS" },
     ],
   },
 ];
 export const socials = [
-  { name: "MEETING", href: "https://cal.com" },
-  { name: "Twitter", href: "https://twitter.com" },
-  { name: "LinkedIn", href: "https://linkedin.com" },
-  { name: "GitHub", href: "https://github.com/elijah-farrell/Awwwards-Portfolio" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/usama-ansar" },
+  { name: "GitHub", href: "https://github.com/UsamaAnsar79" },
 ];

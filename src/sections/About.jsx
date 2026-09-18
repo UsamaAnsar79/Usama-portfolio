@@ -6,11 +6,11 @@ import gsap from "gsap";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-  const aboutText = `Committed to continuous growth in tech—from web development to AI research. Every challenge is a chance: expanding skills and contributing to meaningful projects.
-  When I'm not learning:`;
+  const text = `Software Engineer with 2 years of experience
+    building responsive, dynamic, and maintainable
+    web applications`;
+  const aboutText = `Software Engineer building responsive, dynamic, and maintainable web applications with React.js, Next.js, Vue.js, Node.js, and Express.js. Hands-on experience with AI integration and interactive web experiences using GSAP, Lenis, and Three.js. Focused on clean, scalable, and secure software.
+  A bit about how I work:`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
@@ -48,7 +48,7 @@ const About = () => {
         <img
           ref={imgRef}
           src="images/pfp.png"
-          alt="John Doe Smith"
+          alt="Usama Ansar"
           className="w-md rounded-3xl"
         />
         <div className="w-full">
@@ -56,19 +56,19 @@ const About = () => {
           <div className="mt-4 space-y-2">
             <div className="flex items-center gap-3">
               <Icon icon="lucide:code" className="text-white/80" />
-              <span>Open-sourcing my latest experiment—because rising tides lift all ships</span>
+              <span>Building reusable, maintainable component architecture</span>
             </div>
             <div className="flex items-center gap-3">
               <Icon icon="lucide:search" className="text-white/80" />
-              <span>Exploring new technologies</span>
+              <span>Debugging, testing, and improving reliability</span>
             </div>
             <div className="flex items-center gap-3">
-              <Icon icon="lucide:mountain" className="text-white/80" />
-              <span>Hiking the Adirondacks</span>
+              <Icon icon="lucide:sparkles" className="text-white/80" />
+              <span>Exploring AI integration & automation</span>
             </div>
             <div className="flex items-center gap-3">
-              <Icon icon="lucide:gamepad-2" className="text-white/80" />
-              <span>Gaming</span>
+              <Icon icon="lucide:graduation-cap" className="text-white/80" />
+              <span>BS in Computer Science, Virtual University of Pakistan</span>
             </div>
           </div>
         </div>

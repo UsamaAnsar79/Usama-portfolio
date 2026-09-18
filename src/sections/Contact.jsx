@@ -46,14 +46,14 @@ const Contact = () => {
               <h2>E-mail</h2>
               <div className="w-full h-px my-2 bg-white/30" />
               <p className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl">
-                hello@example.com
+                usamaansar79@gmail.com
               </p>
             </div>
             <div className="social-link">
               <h2>Phone</h2>
               <div className="w-full h-px my-2 bg-white/30" />
               <p className="text-xl lowercase md:text-2xl lg:text-3xl">
-                +33 7 12 12 32 12
+                +92 302 3951526
               </p>
             </div>
             <div className="social-link">

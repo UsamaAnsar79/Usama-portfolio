@@ -1,12 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { socials } from "../constants";
-
-const socials = [
-  { name: "MEETING", href: "https://cal.com" },
-  { name: "Twitter", href: "https://twitter.com" },
-  { name: "LinkedIn", href: "https://linkedin.com" },
-  { name: "GitHub", href: "https://github.com/elijah-farrell/Awwwards-Portfolio" },
-];
+import { socials } from "../constants";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link } from "react-scroll";
@@ -111,21 +104,25 @@ const Navbar = () => {
         className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
       >
         <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl">
-          {["home", "services", "about", "works", "contact"].map(
-            (section, index) => (
-              <div key={index} ref={(el) => (linksRef.current[index] = el)}>
-                <Link
-                  className="transition-all duration-300 cursor-pointer hover:text-white"
-                  to={`${section}`}
-                  smooth
-                  offset={0}
-                  duration={2000}
-                >
-                  {section}
-                </Link>
-              </div>
-            )
-          )}
+          {[
+            { label: "home", id: "home" },
+            { label: "services", id: "services" },
+            { label: "about", id: "about" },
+            { label: "works", id: "work" },
+            { label: "contact", id: "contact" },
+          ].map(({ label, id }, index) => (
+            <div key={index} ref={(el) => (linksRef.current[index] = el)}>
+              <Link
+                className="transition-all duration-300 cursor-pointer hover:text-white"
+                to={id}
+                smooth
+                offset={0}
+                duration={2000}
+              >
+                {label}
+              </Link>
+            </div>
+          ))}
         </div>
         <div
           ref={contactRef}
@@ -134,7 +131,7 @@ const Navbar = () => {
           <div className="font-light">
             <p className="tracking-wider text-white/50">E-mail</p>
             <p className="text-sm tracking-widest lowercase text-pretty">
-              hello@example.com
+              usamaansar79@gmail.com
             </p>
           </div>
           <div className="font-light">

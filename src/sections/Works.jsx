@@ -72,9 +72,12 @@ const Works = () => {
       />
       <div className="relative flex flex-col font-light">
         {projects.map((project, index) => (
-          <div
+          <a
             key={project.id}
             id="project"
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
@@ -96,31 +99,34 @@ const Works = () => {
             </div>
             {/* divider */}
             <div className="w-full h-0.5 bg-black/80" />
+            {/* desktop hover preview image */}
+            <div className="absolute inset-0 z-10 items-center justify-center hidden pointer-events-none md:flex">
+              <img
+                src={project.image}
+                alt={`${project.name} preview`}
+                className="object-contain w-72 rounded-xl bg-black/90 opacity-0 scale-90 shadow-2xl transition-all duration-500 ease-out group-hover:opacity-100 group-hover:scale-100 h-44 lg:w-[420px] lg:h-64"
+              />
+            </div>
             {/* framework */}
-            <div className="flex px-1 sm:px-1 md:px-3 lg:px-6 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm gap-x-5 md:group-hover:px-12 ultra-small-screen">
+            <div className="flex flex-wrap px-1 sm:px-1 md:px-3 lg:px-6 text-xs leading-loose uppercase transtion-all duration-500 md:text-sm gap-x-5 gap-y-1 md:group-hover:px-12 ultra-small-screen">
               {project.frameworks.map((framework) => (
                 <p
                   key={framework.id}
-                  className="text-black transition-colors duration-500 md:group-hover:text-white"
+                  className="text-black whitespace-nowrap transition-colors duration-500 md:group-hover:text-white"
                 >
                   {framework.name}
                 </p>
               ))}
             </div>
             {/* mobile preview image */}
-            <div className="relative flex items-center justify-center px-1 sm:px-1 md:px-3 lg:px-6 md:hidden h-[400px] ultra-small-screen">
-              <img
-                src={project.bgImage}
-                alt={`${project.name}-bg-image`}
-                className="object-cover w-full h-full rounded-md brightness-50"
-              />
+            <div className="relative px-1 sm:px-1 md:px-3 lg:px-6 md:hidden h-[400px] ultra-small-screen">
               <img
                 src={project.image}
-                alt={`${project.name}-image`}
-                className="absolute bg-center px-14 rounded-xl"
+                alt={`${project.name} preview`}
+                className="object-contain w-full h-full bg-black/90 rounded-xl"
               />
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </section>

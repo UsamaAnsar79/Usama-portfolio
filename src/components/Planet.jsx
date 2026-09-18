@@ -7,42 +7,63 @@ import { useGLTF } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export function Planet(props) {
+export function Planet({ isReady, onDropComplete, ...props }) {
   const shapeContainer = useRef(null);
   const shperesContainer = useRef(null);
   const ringContainer = useRef(null);
   const { nodes, materials } = useGLTF("/models/Planet.glb");
 
+  // Snap to the "pre-drop" pose immediately, before the loader even
+  // finishes, so nothing flashes in its resting pose while the loader's
+  // curtain is still revealing the scene underneath.
   useGSAP(() => {
-    const tl = gsap.timeline();
-    tl.from(shapeContainer.current.position, {
-      y: 5,
-      duration: 3,
-      ease: "circ.out",
+    gsap.set(shapeContainer.current.position, { y: 5 });
+    gsap.set(shperesContainer.current.rotation, {
+      x: 0,
+      y: Math.PI,
+      z: -Math.PI,
     });
-    tl.from(
-      shperesContainer.current.rotation,
-      {
-        x: 0,
-        y: Math.PI,
-        z: -Math.PI,
-        duration: 10,
-        ease: "power1.inOut",
-      },
-      "-=25%"
-    );
-    tl.from(
-      ringContainer.current.rotation,
-      {
-        x: 0.8,
-        y: 0,
-        z: 0,
-        duration: 10,
-        ease: "power1.inOut",
-      },
-      "<"
-    );
+    gsap.set(ringContainer.current.rotation, { x: 0.8, y: 0, z: 0 });
   }, []);
+
+  useGSAP(
+    () => {
+      if (!isReady) return;
+
+      // Delayed so the model drops in after the hero title has finished
+      // revealing, instead of animating at the same time.
+      const tl = gsap.timeline({ delay: 1.4 });
+      tl.to(shapeContainer.current.position, {
+        y: 0,
+        duration: 2.2,
+        ease: "circ.out",
+        onComplete: () => onDropComplete?.(),
+      });
+      tl.to(
+        shperesContainer.current.rotation,
+        {
+          x: 0,
+          y: 0,
+          z: 0,
+          duration: 10,
+          ease: "power1.inOut",
+        },
+        "-=25%"
+      );
+      tl.to(
+        ringContainer.current.rotation,
+        {
+          x: -0.124,
+          y: 0.123,
+          z: -0.778,
+          duration: 10,
+          ease: "power1.inOut",
+        },
+        "<"
+      );
+    },
+    [isReady]
+  );
 
   return (
     <group ref={shapeContainer} {...props} dispose={null}>
